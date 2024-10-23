@@ -1,0 +1,1 @@
+{"name":"Local: monsters","url":"i:\\DSA\\CSES\\graphs\\monsters.cpp","tests":[{"id":1724331934154,"input":"5 8\n########\n#M..A..#\n#.#.M#.#\n#M#..#..\n#.######","output":"YES\n5\nRRDDR"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"i:\\DSA\\CSES\\graphs\\monsters.cpp","group":"local","local":true}

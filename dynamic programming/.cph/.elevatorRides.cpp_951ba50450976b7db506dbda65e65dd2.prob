@@ -1,0 +1,1 @@
+{"name":"Local: elevatorRides","url":"i:\\DSA\\CSES\\dynamic programming\\elevatorRides.cpp","tests":[{"id":1729921331260,"input":"4 10\n4 8 6 1","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"i:\\DSA\\CSES\\dynamic programming\\elevatorRides.cpp","group":"local","local":true}

@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
-#define fastio ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
 
 vector<ll> dist(2501, LLONG_MAX), vis(2501, 0);
 vector<vector<ll>> adjrev(2501);
@@ -16,7 +15,6 @@ void dfs(ll node, vector<ll>& reachable) {
 }
 
 int main() {
-    fastio;
     ll n, m;
     cin >> n >> m;
     vector<pair<pair<ll, ll>, ll>> edges(m);

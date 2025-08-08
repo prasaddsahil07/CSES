@@ -1,0 +1,1 @@
+{"name":"Local: mountainRange","url":"i:\\DSA\\CSES\\dynamic programming\\mountainRange.cpp","tests":[{"id":1754630179111,"input":"10\n20 15 17 35 25 40 12 19 13 12","output":"5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"i:\\DSA\\CSES\\dynamic programming\\mountainRange.cpp","group":"local","local":true}

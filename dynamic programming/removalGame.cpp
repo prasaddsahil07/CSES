@@ -55,24 +55,35 @@ ll solve(vector<ll>& nums) {
     // dp[i][j] will store the maximum score the first player can achieve with subarray nums[i..j]
     vector<vector<ll>> dp(n, vector<ll>(n, 0));
     
-    // Base case: when there is only one element, the first player picks that element.
-    for (int i = 0; i < n; ++i) {
-        dp[i][i] = nums[i];
-    }
+    // // Base case: when there is only one element, the first player picks that element.
+    // for (int i = 0; i < n; ++i) {
+    //     dp[i][i] = nums[i];
+    // }
 
     // Fill the table for all subarray lengths > 1
-    for (int length = 2; length <= n; ++length) {
-        for (int i = 0; i <= n - length; ++i) {
-            int j = i + length - 1; // End of the subarray
+    for(int g=0; g<n; ++g){
+        for(int i=0, j=g; j<n; ++j, ++i){
 
-            // If player 1 picks nums[i], the remaining range is nums[i+1..j], and player 2 plays optimally
-            ll pickFirst = nums[i] + min((i+2 <= j)? dp[i+2][j]: 0, (i+1 <= j-1)? dp[i+1][j-1]: 0);
+            if(g == 0){
+                // Base case: when there is only one element, the first player picks that element.
+                dp[i][j] = nums[i];
+            }
 
-            // If player 1 picks nums[j], the remaining range is nums[i..j-1], and player 2 plays optimally
-            ll pickLast = nums[j] + min((i <= j-2) ? dp[i][j-2]: 0, (i+1 <= j-1)? dp[i+1][j-1]: 0);
+            else if(g == 1){
+                // When there are two elements, the first player picks the maximum of the two.
+                dp[i][j] = max(nums[i], nums[j]);
+            }
 
-            // The first player will choose the option that maximizes their score
-            dp[i][j] = max(pickFirst, pickLast);
+            else{
+                // If player 1 picks nums[i], the remaining range is nums[i+1..j], and player 2 plays optimally
+                ll pickFirst = nums[i] + min(dp[i+2][j], dp[i+1][j-1]);
+
+                // If player 1 picks nums[j], the remaining range is nums[i..j-1], and player 2 plays optimally
+                ll pickLast = nums[j] + min(dp[i][j-2], dp[i+1][j-1]);
+
+                // The first player will choose the option that maximizes their score
+                dp[i][j] = max(pickFirst, pickLast);
+            }
         }
     }
 
